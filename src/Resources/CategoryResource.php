@@ -41,7 +41,7 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label(trans('filament-blog::cafali-blog.categories.name'))
+                    ->label(trans('filament-blog::cafali-blog.categories.name_category'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\TextColumn::make('posts_count')

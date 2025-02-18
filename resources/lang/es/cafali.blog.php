@@ -10,7 +10,7 @@ return [
     "categories" => [
         "title_page" => "Categorías",
         "title" => "Categoria",
-        "name" => "Nombre de la categoría",
+        "name_category" => "Nombre de la categoría",
         "posts_count" => "Número de posts",
 
         "create_page" => "Crear categoría",
@@ -26,7 +26,8 @@ return [
         "approved" => "Aprobado",
         "approved_at" => "Aprobado en",
         "username" => "Nombre de usuario",
-        "add_comment" => "Agregar comentario"
+        "add_comment" => "Agregar comentario",
+        "post" => "Post",
     ],
     "newsletters" => [
         "title_page" => "News Letters",
@@ -44,9 +45,9 @@ return [
         "cover_photo" => "Foto de portada",
         "general" => "Información General",
         "publish_information" => "Información publica",
-        "published" => "Publicado",
-        "scheduled" => "Programado",
-        "pending" => "Pendiente",
+        "published" => "Publicados",
+        "scheduled" => "Programados",
+        "pending" => "Pendientes",
 
         "blog_details" => "Detalles del blog",
         "categories" => "Categorías",
@@ -56,6 +57,7 @@ return [
 //        "feature_image_hint" => "This cover image is used in your blog post as a feature image. Recommended image size 1200 X 628",
         "feature_image_hint" => "Esta imagen de portada se utiliza en su publicación de blog como imagen destacada. Tamaño de imagen recomendado 1200 X 628",
         "scheduled_for" => "Programado para",
+        "photo_alt_text" => "Texto auxiliar de la imagen"
     ],
     "seo" => [
         "title_page" => "Detalles de SEO",
@@ -63,7 +65,8 @@ return [
         "title" => "Título",
         "keywords" => "Palabras clave",
         "description" => "Descripción",
-        "add_seo" => "Agregar SEO"
+        "add_seo" => "Agregar SEO",
+        "post" => "Post"
     ],
     "settings" => [
         "title_page" => "Configuraciones",
@@ -72,6 +75,18 @@ return [
         "description" => "Descripción",
         "organization" => "Nombre de la organización",
         "value" => "Valor",
+        "general_information" => "Información general",
+        "logo" => "Logo",
+        "favicon" => "Favicon",
+//        "seo_description" => "Place your google analytic and adsense code here. This will be added to the head tag of your blog post only.",
+        "seo_description" => "Coloque su código de Google Analytics y AdSense aquí. Esto se agregará a la etiqueta head de su publicación de blog solo.",
+        "google_console_code" => "Código de Google",
+        "google_analytics_code" => "Código de Google Analytics",
+        "google_adsense_code" => "Código de Google AdSense",
+
+        "quick_links" => "Enlaces rápidos",
+        "links" => "Enlaces",
+        "label" => "Etiqueta",
     ],
     "tags" => [
         "title_page" => "Etiquetas",

@@ -78,14 +78,18 @@ class SeoDetail extends Model
                 ->preload()
                 ->searchable()
                 ->default(request('post_id') ?? '')
+                ->label(trans('filament-blog::cafali-blog.seo.post'))
                 ->columnSpanFull(),
             TextInput::make('title')
+                ->label(trans('filament-blog::cafali-blog.seo.title'))
                 ->required()
                 ->maxLength(255)
                 ->columnSpanFull(),
             TagsInput::make('keywords')
+                ->label(trans('filament-blog::cafali-blog.seo.keywords'))
                 ->columnSpanFull(),
             Textarea::make('description')
+                ->label(trans('filament-blog::cafali-blog.seo.description'))
                 ->required()
                 ->maxLength(65535)
                 ->columnSpanFull(),

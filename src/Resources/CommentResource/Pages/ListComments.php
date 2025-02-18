@@ -13,7 +13,8 @@ class ListComments extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->label(trans('filament-blog::cafali-blog.create')),
         ];
     }
 }

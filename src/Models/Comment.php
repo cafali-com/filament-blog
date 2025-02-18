@@ -66,15 +66,19 @@ class Comment extends Model
         return [
             Select::make('user_id')
                 ->relationship('user', config('filamentblog.user.columns.name'))
+                ->label(trans('filament-blog::cafali-blog.comments.user'))
                 ->required(),
             Select::make('post_id')
                 ->relationship('post', 'title')
+                ->label(trans('filament-blog::cafali-blog.comments.post'))
                 ->required(),
             Textarea::make('comment')
+                ->label(trans('filament-blog::cafali-blog.comments.comment'))
                 ->required()
                 ->maxLength(65535)
                 ->columnSpanFull(),
-            Toggle::make('approved'),
+            Toggle::make('approved')
+                ->label(trans('filament-blog::cafali-blog.comments.approved')),
         ];
     }
 

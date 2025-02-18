@@ -201,7 +201,9 @@ class Post extends Model
                                 ->maxSize(1024 * 5)
                                 ->rules('dimensions:max_width=1920,max_height=1004')
                                 ->required(),
-                            TextInput::make('photo_alt_text')->required(),
+                            TextInput::make('photo_alt_text')
+                                ->label(trans('filament-blog::cafali-blog.posts.photo_alt_text'))
+                                ->required(),
                         ])->columns(1),
 
                     Fieldset::make('Status')

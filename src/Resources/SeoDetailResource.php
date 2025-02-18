@@ -45,6 +45,7 @@ class SeoDetailResource extends Resource
                     ->limit(20)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('keywords')->badge()
+                    ->label(trans('filament-blog::cafali-blog.seo.keywords'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
