@@ -138,8 +138,7 @@ class Post extends Model
     public static function getForm()
     {
         return [
-            Section::make('Blog Details')
-                ->label(trans('filament-blog::cafali-blog.posts.blog_details'))
+            Section::make(trans('filament-blog::cafali-blog.posts.blog_details'))
                 ->schema([
                     Fieldset::make('Titles')
                         ->label(trans('filament-blog::cafali-blog.posts.titles'))

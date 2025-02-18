@@ -19,6 +19,8 @@ class NewsletterResource extends Resource
 
     protected static ?int $navigationSort = 6;
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function getNavigationLabel(): string {
         return trans('filament-blog::cafali-blog.newsletters.title_page');
     }

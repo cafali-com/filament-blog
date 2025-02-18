@@ -54,8 +54,7 @@ class Setting extends Model
     public static function getForm(): array
     {
         return [
-            Section::make('General Information')
-                ->label(trans('filament-blog::cafali-blog.settings.general_information'))
+            Section::make(trans('filament-blog::cafali-blog.settings.general_information'))
                 ->schema([
                     TextInput::make('title')
                         ->label(trans('filament-blog::cafali-blog.settings.title'))
@@ -95,7 +94,7 @@ class Setting extends Model
                         ->nullable()
                         ->columnSpanFull(),
                     Textarea::make('google_analytic_code')
-                        ->label(trans('filament-blog::cafali-blog.settings.google_analytic_code'))
+                        ->label(trans('filament-blog::cafali-blog.settings.google_analytics_code'))
                         ->startsWith('<script')
                         ->endsWith('</script>')
                         ->nullable()
@@ -107,9 +106,8 @@ class Setting extends Model
                         ->nullable()
                         ->columnSpanFull(),
                 ])->columns(2),
-            Section::make('Quick Links')
-                ->label(trans('filament-blog::cafali-blog.settings.quick_links'))
-                ->description('Add your quick links here. This will be displayed in the footer of your blog.')
+            Section::make(trans('filament-blog::cafali-blog.settings.quick_links'))
+                ->description(trans('filament-blog::cafali-blog.settings.quick_links_description'))
                 ->schema([
                     Repeater::make('quick_links')
                         ->label(trans('filament-blog::cafali-blog.settings.links'))
