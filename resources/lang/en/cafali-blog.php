@@ -87,6 +87,8 @@ return [
         "quick_links" => "Enlaces rápidos",
         "links" => "Enlaces",
         "label" => "Etiqueta",
+//        "quick_links_description" => "Add your quick links here. This will be displayed in the footer of your blog.",
+        "quick_links_description" => "Agregue sus enlaces rápidos aquí. Esto se mostrará en el pie de página de su blog.",
     ],
     "tags" => [
         "title_page" => "Etiquetas",
