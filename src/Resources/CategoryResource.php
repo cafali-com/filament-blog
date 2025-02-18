@@ -22,6 +22,14 @@ class CategoryResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
+    public static function getNavigationLabel(): string {
+        return trans('filament-blog::cafali-blog.categories.title_page');
+    }
+
+    public static function getLabel(): string {
+        return trans('filament-blog::cafali-blog.categories.title_page');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -33,9 +41,11 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label(trans('filament-blog::cafali-blog.categories.name'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\TextColumn::make('posts_count')
+                    ->label(trans('filament-blog::cafali-blog.categories.posts_count'))
                     ->badge()
                     ->counts('posts'),
                 Tables\Columns\TextColumn::make('created_at')
@@ -51,13 +61,17 @@ class CategoryResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label(trans('filament-blog::cafali-blog.categories.edit')),
+                Tables\Actions\ViewAction::make()
+                    ->label(trans('filament-blog::cafali-blog.categories.view')),
+                Tables\Actions\DeleteAction::make()
+                    ->label(trans('filament-blog::cafali-blog.categories.delete')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label(trans('filament-blog::cafali-blog.categories.delete')),
                 ]),
             ]);
     }
@@ -67,7 +81,8 @@ class CategoryResource extends Resource
         return $infolist->schema([
             Section::make('Category')
                 ->schema([
-                    TextEntry::make('name'),
+                    TextEntry::make('name')
+                        ->label(trans('filament-blog::cafali-blog.categories.name')),
                     TextEntry::make('slug'),
                 ])->columns(2)
                 ->icon('heroicon-o-square-3-stack-3d'),

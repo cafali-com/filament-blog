@@ -20,6 +20,14 @@ class CommentResource extends Resource
 
     protected static ?int $navigationSort = 5;
 
+    public static function getNavigationLabel(): string {
+        return trans('filament-blog::cafali-blog.comments.title_page');
+    }
+
+    public static function getLabel(): string {
+        return trans('filament-blog::cafali-blog.comments.title_page');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -31,12 +39,13 @@ class CommentResource extends Resource
         return $table
             ->columns([
                 UserPhotoName::make('user')
-                    ->label('User'),
+                    ->label(trans('filament-blog::cafali-blog.comments.user')),
                 Tables\Columns\TextColumn::make('post.title')
                     ->numeric()
                     ->limit(20)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('comment')
+                    ->label(trans('filament-blog::cafali-blog.comments.comment'))
                     ->searchable()
                     ->limit(20),
                 Tables\Columns\ToggleColumn::make('approved')

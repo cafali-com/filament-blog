@@ -18,6 +18,14 @@ class SeoDetailResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
+    public static function getNavigationLabel(): string {
+        return trans('filament-blog::cafali-blog.seo.title_page');
+    }
+
+    public static function getLabel(): string {
+        return trans('filament-blog::cafali-blog.seo.title_page');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
