@@ -23,23 +23,30 @@ class SeoDetailRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('title')
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('description'),
+                Tables\Columns\TextColumn::make('title')
+                    ->label(trans('filament-blog::cafali-blog.seo.title')),
+                Tables\Columns\TextColumn::make('description')
+                    ->label(trans('filament-blog::cafali-blog.seo.description')),
                 Tables\Columns\TextColumn::make('keywords')->badge(),
             ])
             ->filters([
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()
+                    ->label(trans('filament-blog::cafali-blog.seo.add_seo')),
             ])
             ->actions([
-                Tables\Actions\EditAction::make()->slideOver(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label(trans('filament-blog::cafali-blog.edit'))
+                    ->slideOver(),
+                Tables\Actions\DeleteAction::make()
+                    ->label(trans('filament-blog::cafali-blog.delete')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label(trans('filament-blog::cafali-blog.delete')),
                 ]),
             ]);
     }

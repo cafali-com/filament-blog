@@ -80,6 +80,7 @@ class CategoryResource extends Resource
     {
         return $infolist->schema([
             Section::make('Category')
+                ->label(trans('filament-blog::cafali-blog.categories.title'))
                 ->schema([
                     TextEntry::make('name')
                         ->label(trans('filament-blog::cafali-blog.categories.name')),

@@ -139,8 +139,10 @@ class Post extends Model
     {
         return [
             Section::make('Blog Details')
+                ->label(trans('filament-blog::cafali-blog.posts.blog_details'))
                 ->schema([
                     Fieldset::make('Titles')
+                        ->label(trans('filament-blog::cafali-blog.posts.titles'))
                         ->schema([
                             Select::make('category_id')
                                 ->multiple()
@@ -148,9 +150,11 @@ class Post extends Model
                                 ->createOptionForm(Category::getForm())
                                 ->searchable()
                                 ->relationship('categories', 'name')
+                                ->label(trans('filament-blog::cafali-blog.posts.categories'))
                                 ->columnSpanFull(),
 
                             TextInput::make('title')
+                                ->label(trans('filament-blog::cafali-blog.posts.title'))
                                 ->live(true)
                                 ->afterStateUpdated(fn (Set $set, ?string $state) => $set(
                                     'slug',
@@ -164,6 +168,7 @@ class Post extends Model
                                 ->maxLength(255),
 
                             Textarea::make('sub_title')
+                                ->label(trans('filament-blog::cafali-blog.posts.sub_title'))
                                 ->maxLength(255)
                                 ->columnSpanFull(),
 
@@ -173,20 +178,23 @@ class Post extends Model
                                 ->createOptionForm(Tag::getForm())
                                 ->searchable()
                                 ->relationship('tags', 'name')
+                                ->label(trans('filament-blog::cafali-blog.posts.tags'))
                                 ->columnSpanFull(),
                         ]),
                     TiptapEditor::make('body')
+                        ->label(trans('filament-blog::cafali-blog.posts.body'))
                         ->profile('default')
                         ->disableFloatingMenus()
                         ->extraInputAttributes(['style' => 'max-height: 30rem; min-height: 24rem'])
                         ->required()
                         ->columnSpanFull(),
                     Fieldset::make('Feature Image')
+                        ->label(trans('filament-blog::cafali-blog.posts.feature_image'))
                         ->schema([
                             FileUpload::make('cover_photo_path')
-                                ->label('Cover Photo')
+                                ->label(trans('filament-blog::cafali-blog.posts.cover_photo'))
                                 ->directory('/blog-feature-images')
-                                ->hint('This cover image is used in your blog post as a feature image. Recommended image size 1200 X 628')
+                                ->hint(trans('filament-blog::cafali-blog.posts.feature_image_hint'))
                                 ->image()
                                 ->preserveFilenames()
                                 ->imageEditor()
@@ -197,15 +205,18 @@ class Post extends Model
                         ])->columns(1),
 
                     Fieldset::make('Status')
+                        ->label(trans('filament-blog::cafali-blog.posts.status'))
                         ->schema([
 
                             ToggleButtons::make('status')
+                                ->label(trans('filament-blog::cafali-blog.posts.status'))
                                 ->live()
                                 ->inline()
                                 ->options(PostStatus::class)
                                 ->required(),
 
                             DateTimePicker::make('scheduled_for')
+                                ->label(trasn('filament-blog::cafali-blog.posts.scheduled_for'))
                                 ->visible(function ($get) {
                                     return $get('status') === PostStatus::SCHEDULED->value;
                                 })
@@ -217,6 +228,7 @@ class Post extends Model
                         ]),
                     Select::make(config('filamentblog.user.foreign_key'))
                         ->relationship('user', config('filamentblog.user.columns.name'))
+                        ->label(trans('filament-blog::cafali-blog.posts.author'))
                         ->nullable(false)
                         ->default(auth()->id()),
 

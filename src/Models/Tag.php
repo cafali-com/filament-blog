@@ -33,6 +33,7 @@ class Tag extends Model
     {
         return [
             TextInput::make('name')
+                ->label(trans('filament-blog::cafali-blog.tags.name'))
                 ->live(true)->afterStateUpdated(fn(Set $set, ?string $state) => $set(
                     'slug',
                     Str::slug($state)
