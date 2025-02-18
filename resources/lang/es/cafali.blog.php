@@ -53,6 +53,7 @@ return [
         "tags" => "Etiquetas",
         "body" => "Contenido",
         "feature_image" => "Imagen destacada",
+//        "feature_image_hint" => "This cover image is used in your blog post as a feature image. Recommended image size 1200 X 628",
         "feature_image_hint" => "Esta imagen de portada se utiliza en su publicación de blog como imagen destacada. Tamaño de imagen recomendado 1200 X 628",
         "scheduled_for" => "Programado para",
     ],

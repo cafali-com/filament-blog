@@ -216,7 +216,7 @@ class Post extends Model
                                 ->required(),
 
                             DateTimePicker::make('scheduled_for')
-                                ->label(trasn('filament-blog::cafali-blog.posts.scheduled_for'))
+                                ->label(trans('filament-blog::cafali-blog.posts.scheduled_for'))
                                 ->visible(function ($get) {
                                     return $get('status') === PostStatus::SCHEDULED->value;
                                 })
