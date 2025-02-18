@@ -19,16 +19,26 @@ class NewsletterResource extends Resource
 
     protected static ?int $navigationSort = 6;
 
+    public static function getNavigationLabel(): string {
+        return trans('filament-blog::cafali-blog.newsletters.title_page');
+    }
+
+    public static function getLabel(): string {
+        return trans('filament-blog::cafali-blog.newsletters.title_page');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('email')
+                    ->label(trans('filament-blog::cafali-blog.newsletters.email'))
                     ->email()
                     ->required()
                     ->unique(ignoreRecord: true)
                     ->maxLength(100),
                 Forms\Components\Toggle::make('subscribed')
+                    ->label(trans('filament-blog::cafali-blog.newsletters.subscribed'))
                     ->default(true)
                     ->required()->columnSpanFull(),
             ])->columns(2);

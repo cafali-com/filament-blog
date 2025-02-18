@@ -38,8 +38,10 @@ class SeoDetailResource extends Resource
             ->striped()
             ->columns([
                 Tables\Columns\TextColumn::make('post.title')
+                    ->label(trans('filament-blog::cafali-blog.seo.posttitle'))
                     ->limit(20),
                 Tables\Columns\TextColumn::make('title')
+                    ->label(trans('filament-blog::cafali-blog.seo.title'))
                     ->limit(20)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('keywords')->badge()
@@ -58,11 +60,13 @@ class SeoDetailResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label(trans('filament-blog::cafali-blog.edit')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                    ->label(trans('filament-blog::cafali-blog.delete')),
                 ]),
             ]);
     }

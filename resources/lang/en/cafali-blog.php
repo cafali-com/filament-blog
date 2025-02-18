@@ -19,11 +19,12 @@ return [
     "comments" => [
         "title_page" => "Comentarios",
         "user" => "Usuario",
+        "posttitle" => "Título del post",
         "comment" => "Comentario",
         "approved" => "Aprobado",
         "approved_at" => "Aprobado en",
     ],
-    "news_letters" => [
+    "newsletters" => [
         "title_page" => "News Letters",
         "email" => "Correo electrónico",
         "subscribed" => "Subscrito",
@@ -36,10 +37,24 @@ return [
         "status" => "Estus",
         "cover_photo" => "Foto de portada",
     ],
-    "seo_details" => [
+    "seo" => [
         "title_page" => "Detalles de SEO",
+        "posttitle" => "Título del post",
         "title" => "Título",
         "keywords" => "Palabras clave",
         "description" => "Descripción",
+    ],
+    "settings" => [
+        "title_page" => "Configuraciones",
+        "title" => "Título",
+        "name" => "Nombre",
+        "description" => "Descripción",
+        "organization" => "Nombre de la organización",
+        "value" => "Valor",
+    ],
+    "tags" => [
+        "title_page" => "Etiquetas",
+        "name" => "Nombre",
+        "slug" => "Slug",
     ],
 ];

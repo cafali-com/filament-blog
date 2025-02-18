@@ -41,6 +41,7 @@ class CommentResource extends Resource
                 UserPhotoName::make('user')
                     ->label(trans('filament-blog::cafali-blog.comments.user')),
                 Tables\Columns\TextColumn::make('post.title')
+                    ->label(trans('filament-blog::cafali-blog.comments.posttitle'))
                     ->numeric()
                     ->limit(20)
                     ->sortable(),
@@ -80,14 +81,18 @@ class CommentResource extends Resource
             ])
             ->actions([
                 ActionGroup::make([
-                    Tables\Actions\EditAction::make(),
-                    Tables\Actions\DeleteAction::make(),
-                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make()
+                        ->label(trans('filament-blog::cafali-blog.edit')),
+                    Tables\Actions\DeleteAction::make()
+                        ->label(trans('filament-blog::cafali-blog.view')),
+                    Tables\Actions\ViewAction::make()
+                        ->label(trans('filament-blog::cafali-blog.delete')),
                 ]),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label(trans('filament-blog::cafali-blog.delete')),
                 ]),
             ]);
     }

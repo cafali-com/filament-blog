@@ -62,16 +62,16 @@ class CategoryResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->label(trans('filament-blog::cafali-blog.categories.edit')),
+                    ->label(trans('filament-blog::cafali-blog.edit')),
                 Tables\Actions\ViewAction::make()
-                    ->label(trans('filament-blog::cafali-blog.categories.view')),
+                    ->label(trans('filament-blog::cafali-blog.view')),
                 Tables\Actions\DeleteAction::make()
-                    ->label(trans('filament-blog::cafali-blog.categories.delete')),
+                    ->label(trans('filament-blog::cafali-blog.delete')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label(trans('filament-blog::cafali-blog.categories.delete')),
+                        ->label(trans('filament-blog::cafali-blog.delete')),
                 ]),
             ]);
     }
