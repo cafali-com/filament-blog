@@ -138,10 +138,10 @@ class Post extends Model
     public static function getForm()
     {
         return [
-            Section::make(trans('filament-blog::cafali-blog.posts.blog_details'))
+            Section::make(trans('filament-blog::filament-blog.posts.blog_details'))
                 ->schema([
                     Fieldset::make('Titles')
-                        ->label(trans('filament-blog::cafali-blog.posts.titles'))
+                        ->label(trans('filament-blog::filament-blog.posts.titles'))
                         ->schema([
                             Select::make('category_id')
                                 ->multiple()
@@ -149,11 +149,11 @@ class Post extends Model
                                 ->createOptionForm(Category::getForm())
                                 ->searchable()
                                 ->relationship('categories', 'name')
-                                ->label(trans('filament-blog::cafali-blog.posts.categories'))
+                                ->label(trans('filament-blog::filament-blog.posts.categories'))
                                 ->columnSpanFull(),
 
                             TextInput::make('title')
-                                ->label(trans('filament-blog::cafali-blog.posts.title'))
+                                ->label(trans('filament-blog::filament-blog.posts.title'))
                                 ->live(true)
                                 ->afterStateUpdated(fn (Set $set, ?string $state) => $set(
                                     'slug',
@@ -167,7 +167,7 @@ class Post extends Model
                                 ->maxLength(255),
 
                             Textarea::make('sub_title')
-                                ->label(trans('filament-blog::cafali-blog.posts.sub_title'))
+                                ->label(trans('filament-blog::filament-blog.posts.sub_title'))
                                 ->maxLength(255)
                                 ->columnSpanFull(),
 
@@ -177,23 +177,23 @@ class Post extends Model
                                 ->createOptionForm(Tag::getForm())
                                 ->searchable()
                                 ->relationship('tags', 'name')
-                                ->label(trans('filament-blog::cafali-blog.posts.tags'))
+                                ->label(trans('filament-blog::filament-blog.posts.tags'))
                                 ->columnSpanFull(),
                         ]),
                     TiptapEditor::make('body')
-                        ->label(trans('filament-blog::cafali-blog.posts.body'))
+                        ->label(trans('filament-blog::filament-blog.posts.body'))
                         ->profile('default')
                         ->disableFloatingMenus()
                         ->extraInputAttributes(['style' => 'max-height: 30rem; min-height: 24rem'])
                         ->required()
                         ->columnSpanFull(),
                     Fieldset::make('Feature Image')
-                        ->label(trans('filament-blog::cafali-blog.posts.feature_image'))
+                        ->label(trans('filament-blog::filament-blog.posts.feature_image'))
                         ->schema([
                             FileUpload::make('cover_photo_path')
-                                ->label(trans('filament-blog::cafali-blog.posts.cover_photo'))
+                                ->label(trans('filament-blog::filament-blog.posts.cover_photo'))
                                 ->directory('/blog-feature-images')
-                                ->hint(trans('filament-blog::cafali-blog.posts.feature_image_hint'))
+                                ->hint(trans('filament-blog::filament-blog.posts.feature_image_hint'))
                                 ->image()
                                 ->preserveFilenames()
                                 ->imageEditor()
@@ -201,23 +201,23 @@ class Post extends Model
                                 ->rules('dimensions:max_width=1920,max_height=1004')
                                 ->required(),
                             TextInput::make('photo_alt_text')
-                                ->label(trans('filament-blog::cafali-blog.posts.photo_alt_text'))
+                                ->label(trans('filament-blog::filament-blog.posts.photo_alt_text'))
                                 ->required(),
                         ])->columns(1),
 
                     Fieldset::make('Status')
-                        ->label(trans('filament-blog::cafali-blog.posts.status'))
+                        ->label(trans('filament-blog::filament-blog.posts.status'))
                         ->schema([
 
                             ToggleButtons::make('status')
-                                ->label(trans('filament-blog::cafali-blog.posts.status'))
+                                ->label(trans('filament-blog::filament-blog.posts.status'))
                                 ->live()
                                 ->inline()
                                 ->options(PostStatus::class)
                                 ->required(),
 
                             DateTimePicker::make('scheduled_for')
-                                ->label(trans('filament-blog::cafali-blog.posts.scheduled_for'))
+                                ->label(trans('filament-blog::filament-blog.posts.scheduled_for'))
                                 ->visible(function ($get) {
                                     return $get('status') === PostStatus::SCHEDULED->value;
                                 })
@@ -229,7 +229,7 @@ class Post extends Model
                         ]),
                     Select::make(config('filamentblog.user.foreign_key'))
                         ->relationship('user', config('filamentblog.user.columns.name'))
-                        ->label(trans('filament-blog::cafali-blog.posts.author'))
+                        ->label(trans('filament-blog::filament-blog.posts.author'))
                         ->nullable(false)
                         ->default(auth()->id()),
 
