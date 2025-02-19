@@ -33,7 +33,7 @@ class Category extends Model
     {
         return [
             TextInput::make('name')
-                ->label(trans('filamentblog::cafali-blog.categories.title'))
+                ->label('Nombre')
                 ->live(true)
                 ->afterStateUpdated(function (Get $get, Set $set, ?string $operation, ?string $old, ?string $state) {
 
