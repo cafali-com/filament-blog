@@ -14,7 +14,7 @@ class EditComment extends EditRecord
     {
         return [
             Actions\DeleteAction::make()
-                ->label(trans('filament-blog::cafali-blog.delete')),
+                ->label(trans('filament-blog::filament-blog.delete')),
         ];
     }
 

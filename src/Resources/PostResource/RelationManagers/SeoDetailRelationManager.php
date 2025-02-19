@@ -24,9 +24,9 @@ class SeoDetailRelationManager extends RelationManager
             ->recordTitleAttribute('title')
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->label(trans('filament-blog::cafali-blog.seo.title')),
+                    ->label(trans('filament-blog::filament-blog.seo.title')),
                 Tables\Columns\TextColumn::make('description')
-                    ->label(trans('filament-blog::cafali-blog.seo.description')),
+                    ->label(trans('filament-blog::filament-blog.seo.description')),
                 Tables\Columns\TextColumn::make('keywords')->badge(),
             ])
             ->filters([
@@ -34,19 +34,19 @@ class SeoDetailRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->label(trans('filament-blog::cafali-blog.seo.add_seo')),
+                    ->label(trans('filament-blog::filament-blog.seo.add_seo')),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->label(trans('filament-blog::cafali-blog.edit'))
+                    ->label(trans('filament-blog::filament-blog.edit'))
                     ->slideOver(),
                 Tables\Actions\DeleteAction::make()
-                    ->label(trans('filament-blog::cafali-blog.delete')),
+                    ->label(trans('filament-blog::filament-blog.delete')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label(trans('filament-blog::cafali-blog.delete')),
+                        ->label(trans('filament-blog::filament-blog.delete')),
                 ]),
             ]);
     }

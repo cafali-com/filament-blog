@@ -30,13 +30,13 @@ class PostsRelationManager extends RelationManager
             ->recordTitleAttribute('title')
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->label(trans('filament-blog::cafali-blog.posts.title'))
+                    ->label(trans('filament-blog::filament-blog.posts.title'))
                     ->limit(40)
                     ->description(function (Post $record) {
                         return Str::limit($record->sub_title);
                     }),
                 Tables\Columns\TextColumn::make('status')
-                    ->label(trans('filament-blog::cafali-blog.posts.status'))
+                    ->label(trans('filament-blog::filament-blog.posts.status'))
                     ->badge()
                     ->color(function ($state) {
                         return $state->getColor();
@@ -47,19 +47,19 @@ class PostsRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->label(trans('filament-blog::cafali-blog.create')),
+                    ->label(trans('filament-blog::filament-blog.create')),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->label(trans('filament-blog::cafali-blog.edit'))
+                    ->label(trans('filament-blog::filament-blog.edit'))
                     ->slideOver(),
                 Tables\Actions\DeleteAction::make()
-                    ->label(trans('filament-blog::cafali-blog.delete')),
+                    ->label(trans('filament-blog::filament-blog.delete')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label(trans('filament-blog::cafali-blog.delete')),
+                        ->label(trans('filament-blog::filament-blog.delete')),
                 ]),
             ]);
     }

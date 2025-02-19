@@ -19,11 +19,11 @@ class TagResource extends Resource
     protected static ?int $navigationSort = 2;
 
     public static function getNavigationLabel(): string {
-        return trans('filament-blog::cafali-blog.tags.title_page');
+        return trans('filament-blog::filament-blog.tags.title_page');
     }
 
     public static function getLabel(): string {
-        return trans('filament-blog::cafali-blog.tags.title_page');
+        return trans('filament-blog::filament-blog.tags.title_page');
     }
 
     public static function form(Form $form): Form
@@ -37,10 +37,10 @@ class TagResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label(trans('filament-blog::cafali-blog.tags.name'))
+                    ->label(trans('filament-blog::filament-blog.tags.name'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
-                    ->label(trans('filament-blog::cafali-blog.tags.slug')),
+                    ->label(trans('filament-blog::filament-blog.tags.slug')),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -57,16 +57,16 @@ class TagResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->label(trans('filament-blog::cafali-blog.edit')),
+                    ->label(trans('filament-blog::filament-blog.edit')),
                 Tables\Actions\ViewAction::make()
-                    ->label(trans('filament-blog::cafali-blog.view')),
+                    ->label(trans('filament-blog::filament-blog.view')),
                 Tables\Actions\DeleteAction::make()
-                    ->label(trans('filament-blog::cafali-blog.delete')),
+                    ->label(trans('filament-blog::filament-blog.delete')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label(trans('filament-blog::cafali-blog.delete')),
+                        ->label(trans('filament-blog::filament-blog.delete')),
                 ]),
             ]);
     }

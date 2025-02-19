@@ -22,11 +22,11 @@ class NewsletterResource extends Resource
     protected static bool $shouldRegisterNavigation = false;
 
     public static function getNavigationLabel(): string {
-        return trans('filament-blog::cafali-blog.newsletters.title_page');
+        return trans('filament-blog::filament-blog.newsletters.title_page');
     }
 
     public static function getLabel(): string {
-        return trans('filament-blog::cafali-blog.newsletters.title_page');
+        return trans('filament-blog::filament-blog.newsletters.title_page');
     }
 
     public static function form(Form $form): Form
@@ -34,13 +34,13 @@ class NewsletterResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('email')
-                    ->label(trans('filament-blog::cafali-blog.newsletters.email'))
+                    ->label(trans('filament-blog::filament-blog.newsletters.email'))
                     ->email()
                     ->required()
                     ->unique(ignoreRecord: true)
                     ->maxLength(100),
                 Forms\Components\Toggle::make('subscribed')
-                    ->label(trans('filament-blog::cafali-blog.newsletters.subscribed'))
+                    ->label(trans('filament-blog::filament-blog.newsletters.subscribed'))
                     ->default(true)
                     ->required()->columnSpanFull(),
             ])->columns(2);

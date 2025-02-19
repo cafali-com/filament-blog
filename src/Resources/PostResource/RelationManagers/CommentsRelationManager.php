@@ -28,28 +28,28 @@ class CommentsRelationManager extends RelationManager
             ->recordTitleAttribute('comment')
             ->columns([
                 Tables\Columns\TextColumn::make('comment')
-                    ->label(trans('filament-blog::cafali-blog.comments.comment'))
+                    ->label(trans('filament-blog::filament-blog.comments.comment'))
                     ->limit(20),
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label(trans('filament-blog::cafali-blog.comments.username')),
+                    ->label(trans('filament-blog::filament-blog.comments.username')),
             ])
             ->filters([
                 //
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->label(trans('filament-blog::cafali-blog.comments.add_comment')),
+                    ->label(trans('filament-blog::filament-blog.comments.add_comment')),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->label(trans('filament-blog::cafali-blog.edit')),
+                    ->label(trans('filament-blog::filament-blog.edit')),
                 Tables\Actions\DeleteAction::make()
-                    ->label(trans('filament-blog::cafali-blog.delete')),
+                    ->label(trans('filament-blog::filament-blog.delete')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label(trans('filament-blog::cafali-blog.delete')),
+                        ->label(trans('filament-blog::filament-blog.delete')),
                 ]),
             ]);
     }

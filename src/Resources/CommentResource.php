@@ -21,11 +21,11 @@ class CommentResource extends Resource
     protected static ?int $navigationSort = 5;
 
     public static function getNavigationLabel(): string {
-        return trans('filament-blog::cafali-blog.comments.title_page');
+        return trans('filament-blog::filament-blog.comments.title_page');
     }
 
     public static function getLabel(): string {
-        return trans('filament-blog::cafali-blog.comments.title_page');
+        return trans('filament-blog::filament-blog.comments.title_page');
     }
 
     public static function form(Form $form): Form
@@ -39,14 +39,14 @@ class CommentResource extends Resource
         return $table
             ->columns([
                 UserPhotoName::make('user')
-                    ->label(trans('filament-blog::cafali-blog.comments.user')),
+                    ->label(trans('filament-blog::filament-blog.comments.user')),
                 Tables\Columns\TextColumn::make('post.title')
-                    ->label(trans('filament-blog::cafali-blog.comments.posttitle'))
+                    ->label(trans('filament-blog::filament-blog.comments.posttitle'))
                     ->numeric()
                     ->limit(20)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('comment')
-                    ->label(trans('filament-blog::cafali-blog.comments.comment'))
+                    ->label(trans('filament-blog::filament-blog.comments.comment'))
                     ->searchable()
                     ->limit(20),
                 Tables\Columns\ToggleColumn::make('approved')
@@ -82,17 +82,17 @@ class CommentResource extends Resource
             ->actions([
                 ActionGroup::make([
                     Tables\Actions\EditAction::make()
-                        ->label(trans('filament-blog::cafali-blog.edit')),
+                        ->label(trans('filament-blog::filament-blog.edit')),
                     Tables\Actions\DeleteAction::make()
-                        ->label(trans('filament-blog::cafali-blog.view')),
+                        ->label(trans('filament-blog::filament-blog.view')),
                     Tables\Actions\ViewAction::make()
-                        ->label(trans('filament-blog::cafali-blog.delete')),
+                        ->label(trans('filament-blog::filament-blog.delete')),
                 ]),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label(trans('filament-blog::cafali-blog.delete')),
+                        ->label(trans('filament-blog::filament-blog.delete')),
                 ]),
             ]);
     }

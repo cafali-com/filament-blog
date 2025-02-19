@@ -53,22 +53,22 @@ class PostResource extends Resource
             ->deferLoading()
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->label(trans('filament-blog::cafali-blog.posts.title'))
+                    ->label(trans('filament-blog::filament-blog.posts.title'))
                     ->description(function (Post $record) {
                         return Str::limit($record->sub_title, 40);
                     })
                     ->searchable()->limit(20),
                 Tables\Columns\TextColumn::make('status')
-                    ->label(trans('filament-blog::cafali-blog.posts.status'))
+                    ->label(trans('filament-blog::filament-blog.posts.status'))
                     ->badge()
                     ->color(function ($state) {
                         return $state->getColor();
                     }),
                 Tables\Columns\ImageColumn::make('cover_photo_path')
-                    ->label(trans('filament-blog::cafali-blog.posts.cover_photo')),
+                    ->label(trans('filament-blog::filament-blog.posts.cover_photo')),
 
                 UserPhotoName::make('user')
-                    ->label(trans('filament-blog::cafali-blog.posts.author')),
+                    ->label(trans('filament-blog::filament-blog.posts.author')),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -89,15 +89,15 @@ class PostResource extends Resource
             ->actions([
                 Tables\Actions\ActionGroup::make([
                     Tables\Actions\EditAction::make()
-                        ->label(trans('filament-blog::cafali-blog.edit')),
+                        ->label(trans('filament-blog::filament-blog.edit')),
                     Tables\Actions\ViewAction::make()
-                        ->label(trans('filament-blog::cafali-blog.view')),
+                        ->label(trans('filament-blog::filament-blog.view')),
                 ]),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label(trans('filament-blog::cafali-blog.delete')),
+                        ->label(trans('filament-blog::filament-blog.delete')),
                 ]),
             ]);
     }
@@ -108,19 +108,19 @@ class PostResource extends Resource
             Section::make('Post')
                 ->schema([
                     Fieldset::make('General')
-                        ->label(trans('filament-blog::cafali-blog.posts.general'))
+                        ->label(trans('filament-blog::filament-blog.posts.general'))
                         ->schema([
                             TextEntry::make('title')
-                                ->label(trans('filament-blog::cafali-blog.posts.title')),
+                                ->label(trans('filament-blog::filament-blog.posts.title')),
                             TextEntry::make('slug'),
                             TextEntry::make('sub_title')
-                                ->label(trans('filament-blog::cafali-blog.posts.sub_title')),
+                                ->label(trans('filament-blog::filament-blog.posts.sub_title')),
                         ]),
                     Fieldset::make('Publish Information')
-                        ->label(trans('filament-blog::cafali-blog.posts.publish_information'))
+                        ->label(trans('filament-blog::filament-blog.posts.publish_information'))
                         ->schema([
                             TextEntry::make('status')
-                                ->label(trans('filament-blog::cafali-blog.posts.status'))
+                                ->label(trans('filament-blog::filament-blog.posts.status'))
                                 ->badge()->color(function ($state) {
                                     return $state->getColor();
                                 }),
@@ -133,7 +133,7 @@ class PostResource extends Resource
                             }),
                         ]),
                     Fieldset::make('Description')
-                        ->label(trans('filament-blog::cafali-blog.posts.description'))
+                        ->label(trans('filament-blog::filament-blog.posts.description'))
                         ->schema([
                             TextEntry::make('body')
                                 ->html()

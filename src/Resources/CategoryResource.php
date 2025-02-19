@@ -23,11 +23,11 @@ class CategoryResource extends Resource
     protected static ?int $navigationSort = 1;
 
     public static function getNavigationLabel(): string {
-        return trans('filament-blog::cafali-blog.categories.title_page');
+        return trans('filament-blog::filament-blog.categories.title_page');
     }
 
     public static function getLabel(): string {
-        return trans('filament-blog::cafali-blog.categories.title_page');
+        return trans('filament-blog::filament-blog.categories.title_page');
     }
 
     public static function form(Form $form): Form
@@ -41,11 +41,11 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label(trans('filament-blog::cafali-blog.categories.title'))
+                    ->label(trans('filament-blog::filament-blog.categories.title'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\TextColumn::make('posts_count')
-                    ->label(trans('filament-blog::cafali-blog.categories.posts_count'))
+                    ->label(trans('filament-blog::filament-blog.categories.posts_count'))
                     ->badge()
                     ->counts('posts'),
                 Tables\Columns\TextColumn::make('created_at')
@@ -62,16 +62,16 @@ class CategoryResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->label(trans('filament-blog::cafali-blog.edit')),
+                    ->label(trans('filament-blog::filament-blog.edit')),
                 Tables\Actions\ViewAction::make()
-                    ->label(trans('filament-blog::cafali-blog.view')),
+                    ->label(trans('filament-blog::filament-blog.view')),
                 Tables\Actions\DeleteAction::make()
-                    ->label(trans('filament-blog::cafali-blog.delete')),
+                    ->label(trans('filament-blog::filament-blog.delete')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->label(trans('filament-blog::cafali-blog.delete')),
+                        ->label(trans('filament-blog::filament-blog.delete')),
                 ]),
             ]);
     }
@@ -80,10 +80,10 @@ class CategoryResource extends Resource
     {
         return $infolist->schema([
             Section::make('Category')
-                ->label(trans('filament-blog::cafali-blog.categories.title'))
+                ->label(trans('filament-blog::filament-blog.categories.title'))
                 ->schema([
                     TextEntry::make('name')
-                        ->label(trans('filament-blog::cafali-blog.categories.name')),
+                        ->label(trans('filament-blog::filament-blog.categories.name')),
                     TextEntry::make('slug'),
                 ])->columns(2)
                 ->icon('heroicon-o-square-3-stack-3d'),

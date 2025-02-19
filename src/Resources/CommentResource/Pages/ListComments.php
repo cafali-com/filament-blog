@@ -14,7 +14,7 @@ class ListComments extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-                ->label(trans('filament-blog::cafali-blog.create')),
+                ->label(trans('filament-blog::filament-blog.create')),
         ];
     }
 }
