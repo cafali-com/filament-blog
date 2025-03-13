@@ -30,6 +30,12 @@ class RenameTablesCommand extends Command
             '--path' => 'vendor/firefly/filament-blog/database/migrations/2024_05_11_152936_create_add_prefix_on_all_blog_tables.php',
             '--force' => true,
         ]);
+
+        Artisan::call('migrate', [
+            '--path' => 'vendor/firefly/filament-blog/database/migrations/2025_03_13_152936_create_add_article_table.php',
+            '--force' => true,
+        ]);
+
         $this->info('Tables have been renamed successfully.');
     }
 }
