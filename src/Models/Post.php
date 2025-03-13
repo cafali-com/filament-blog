@@ -192,7 +192,9 @@ class Post extends Model
                         ->schema([
                             FileUpload::make('cover_photo_path')
                                 ->label(trans('filament-blog::filament-blog.posts.cover_photo'))
-                                ->directory('/blog-feature-images')
+//                                ->directory('/blog-feature-images')
+                                    ->disk('s3')
+                                ->directory('blog')
                                 ->hint(trans('filament-blog::filament-blog.posts.feature_image_hint'))
                                 ->image()
                                 ->preserveFilenames()
