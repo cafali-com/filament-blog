@@ -186,6 +186,8 @@ class Post extends Model
                         ->disableFloatingMenus()
                         ->extraInputAttributes(['style' => 'max-height: 30rem; min-height: 24rem'])
                         ->required()
+                        ->disk('s3')
+                        ->directory('blog')
                         ->columnSpanFull(),
                     Fieldset::make('Feature Image')
                         ->label(trans('filament-blog::filament-blog.posts.feature_image'))
@@ -193,7 +195,7 @@ class Post extends Model
                             FileUpload::make('cover_photo_path')
                                 ->label(trans('filament-blog::filament-blog.posts.cover_photo'))
 //                                ->directory('/blog-feature-images')
-                                    ->disk('s3')
+                                ->disk('s3')
                                 ->directory('blog')
                                 ->hint(trans('filament-blog::filament-blog.posts.feature_image_hint'))
                                 ->image()
