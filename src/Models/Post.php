@@ -22,10 +22,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
-class Post extends Model
+class Post extends Model implements HasMedia
 {
     use HasFactory;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'title',
@@ -188,15 +192,19 @@ class Post extends Model
                         ->required()
                         ->disk('s3')
                         ->directory('blog')
+                        ->visibility('public')
                         ->columnSpanFull(),
                     Fieldset::make('Feature Image')
                         ->label(trans('filament-blog::filament-blog.posts.feature_image'))
                         ->schema([
-                            FileUpload::make('cover_photo_path')
+                            SpatieMediaLibraryFileUpload::make('cover_photo_path')
+//                            FileUpload::make('cover_photo_path')
                                 ->label(trans('filament-blog::filament-blog.posts.cover_photo'))
-//                                ->directory('/blog-feature-images')
+////                                ->directory('/blog-feature-images')
                                 ->disk('s3')
-                                ->directory('blog')
+                                ->collection('blog')
+//                                ->directory('blog')
+                                ->visibility('public')
                                 ->hint(trans('filament-blog::filament-blog.posts.feature_image_hint'))
                                 ->image()
                                 ->preserveFilenames()
