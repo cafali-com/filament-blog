@@ -31,11 +31,6 @@ class RenameTablesCommand extends Command
             '--force' => true,
         ]);
 
-        Artisan::call('migrate', [
-            '--path' => 'vendor/firefly/filament-blog/database/migrations/2025_03_13_152936_create_add_article_table.php',
-            '--force' => true,
-        ]);
-
         $this->info('Tables have been renamed successfully.');
     }
 }

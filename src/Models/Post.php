@@ -194,6 +194,7 @@ class Post extends Model implements HasMedia
                         ->directory('blog')
                         ->visibility('public')
                         ->columnSpanFull(),
+                    //TODO: We need to add a separate migration fot the cover_photo_path
                     Fieldset::make('Feature Image')
                         ->label(trans('filament-blog::filament-blog.posts.feature_image'))
                         ->schema([
