@@ -64,8 +64,8 @@ class PostResource extends Resource
                     ->color(function ($state) {
                         return $state->getColor();
                     }),
-                Tables\Columns\ImageColumn::make('cover_photo_path')
-                    ->label(trans('filament-blog::filament-blog.posts.cover_photo')),
+//                Tables\Columns\ImageColumn::make('cover_photo_path')
+//                    ->label(trans('filament-blog::filament-blog.posts.cover_photo')),
 
                 UserPhotoName::make('user')
                     ->label(trans('filament-blog::filament-blog.posts.author')),
