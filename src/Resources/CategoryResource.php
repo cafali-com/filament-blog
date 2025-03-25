@@ -83,7 +83,7 @@ class CategoryResource extends Resource
                 ->label(trans('filament-blog::filament-blog.categories.title'))
                 ->schema([
                     TextEntry::make('name')
-                        ->label(trans('filament-blog::filament-blog.categories.name')),
+                        ->label(trans('filament-blog::filament-blog.categories.name_category')),
                     TextEntry::make('slug'),
                 ])->columns(2)
                 ->icon('heroicon-o-square-3-stack-3d'),
