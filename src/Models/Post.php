@@ -241,7 +241,8 @@ class Post extends Model implements HasMedia
                                 ->native(false),
                         ]),
                     Select::make(config('filamentblog.user.foreign_key'))
-                        ->relationship('user', config('filamentblog.user.columns.name'))
+//                        ->relationship('user', config('filamentblog.user.columns.name'))
+                        ->options(config('filamentblog.user.model')::where('is_admin', true)->pluck('name', 'id'))
                         ->label(trans('filament-blog::filament-blog.posts.author'))
                         ->nullable(false)
                         ->default(auth()->id()),
